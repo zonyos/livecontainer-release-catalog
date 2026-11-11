@@ -107,14 +107,28 @@
       "name": "Erosion-CN",
       "bundleIdentifier": "com.jbdotparty.Erosion",
       "developerName": "Kianuni",
-      "subtitle": "官方版本 v0.8.1 · 2026-11-11 UTC",
-      "localizedDescription": "版本公告来自 https://github.com/Kianuni/Erosion-CN/releases/tag/v0.8.1",
+      "subtitle": "官方版本 v0.8.5 · 2026-11-11 UTC",
+      "localizedDescription": "版本公告来自 https://github.com/Kianuni/Erosion-CN/releases/tag/v0.8.5",
       "iconURL": "https://raw.githubusercontent.com/Kianuni/Erosion-CN/main/PreviewIcon.png",
-      "version": "0.8.1",
-      "versionDate": "2026-11-11T06:46:21Z",
-      "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v0.8.1/Erosion_v0.8.1_zh-Hans.ipa",
-      "size": 6029106,
+      "version": "0.8.5",
+      "versionDate": "2026-11-11T13:17:51Z",
+      "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v0.8.5/Erosion_v0.8.5_zh-Hans.ipa",
+      "size": 6039610,
       "versions": [
+        {
+          "version": "0.8.5",
+          "date": "2026-11-11T13:17:51Z",
+          "localizedDescription": "版本公告来自 https://github.com/Kianuni/Erosion-CN/releases/tag/v0.8.5",
+          "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v0.8.5/Erosion_v0.8.5_zh-Hans.ipa",
+          "size": 6039610
+        },
+        {
+          "version": "0.8.2",
+          "date": "2026-11-11T10:44:15Z",
+          "localizedDescription": "版本公告来自 https://github.com/Kianuni/Erosion-CN/releases/tag/v0.8.2",
+          "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v0.8.2/Erosion_v0.8.2_zh-Hans.ipa",
+          "size": 6036683
+        },
         {
           "version": "0.8.1",
           "date": "2026-11-11T06:46:21Z",
@@ -135,20 +149,6 @@
           "localizedDescription": "版本公告来自 https://github.com/Kianuni/Erosion-CN/releases/tag/v0.7.2",
           "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v0.7.2/Erosion_v0.7.2_zh-Hans.ipa",
           "size": 5769202
-        },
-        {
-          "version": "0.7.1",
-          "date": "2026-11-10T12:42:17Z",
-          "localizedDescription": "版本公告来自 https://github.com/Kianuni/Erosion-CN/releases/tag/v0.7.1",
-          "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v0.7.1/Erosion_v0.7.1_zh-Hans.ipa",
-          "size": 5733412
-        },
-        {
-          "version": "0.7.0",
-          "date": "2026-11-10T11:48:48Z",
-          "localizedDescription": "版本公告来自 https://github.com/Kianuni/Erosion-CN/releases/tag/v0.7.0",
-          "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v0.7.0/Erosion_v0.7.0_zh-Hans.ipa",
-          "size": 5782794
         }
       ]
     },
