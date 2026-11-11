@@ -109,8 +109,11 @@ def main():
         }),
         # 新增 App 模板：复制下面五行到列表的右方括号之前，保留缩进，去掉每行开头的「# 」。
         # repository 填 GitHub 的「作者/仓库名」，bundleIdentifier 填 App 本身的标识符。
-        # 要自动查找 IPA，可删除 downloadURL 这一行，版本号和实际文件名会从最新正式发布读取。
-        # 要指定首选附件，保留该行并替换为官方最新版附件地址。只显示版本时填 "XXXX"。
+        # 只有一个 IPA 时可以删掉 downloadURL。遇到多个 IPA，省略该行会用「仓库名.ipa」作首选。
+        # 如果有多个 IPA，且想选的文件名与仓库名不同，保留 downloadURL，填写该附件的官方最新版地址。
+        # 以 Asspp 为例，仓库名就是 Asspp，保留上面的地址或删掉该行，首选文件名都是 Asspp.ipa。
+        # 假设下次 tag 是 v4.2.3，只有 Asspp_4.2.3.ipa，脚本会取它的实际链接，无需手改版本号。
+        # 若 Asspp.ipa 与 Asspp_4.2.3.ipa 同时存在，优先选 Asspp.ipa。只想显示版本时填 "XXXX"。
         # catalogue_entry({
         #     "repository": "OWNER/ExampleReader",
         #     "bundleIdentifier": "com.example.reader",
