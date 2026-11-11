@@ -8,25 +8,27 @@
       "name": "GestaltX",
       "bundleIdentifier": "com.huami.gestultx",
       "developerName": "huamidev",
-      "subtitle": "官方版本 v1.0.5 · 2026-11-11 UTC",
+      "subtitle": "downloadURL: XXXX · 官方版本 v1.0.5 · 2026-11-11 UTC",
       "localizedDescription": "版本公告来自 https://github.com/huamidev/GestaltX/releases/tag/v1.0.5",
       "version": "1.0.5",
-      "versionDate": "2026-11-11T03:45:16Z"
+      "versionDate": "2026-11-11T03:45:16Z",
+      "downloadURL": "XXXX"
     },
     {
       "name": "Erosion",
       "bundleIdentifier": "com.jbdotparty.Erosion",
       "developerName": "jailbreakdotparty",
-      "subtitle": "官方版本 0.3.1 · 2026-11-10 UTC",
+      "subtitle": "downloadURL: XXXX · 官方版本 0.3.1 · 2026-11-10 UTC",
       "localizedDescription": "版本公告来自 https://github.com/jailbreakdotparty/Erosion/releases/tag/0.3.1",
       "version": "0.3.1",
-      "versionDate": "2026-11-10T04:44:50Z"
+      "versionDate": "2026-11-10T04:44:50Z",
+      "downloadURL": "XXXX"
     },
     {
       "name": "Asspp",
       "bundleIdentifier": "wiki.qaq.Asspp",
       "developerName": "Lakr233",
-      "subtitle": "官方版本 4.2.2 · 2026-10-20 UTC",
+      "subtitle": "downloadURL: https://github.com/Lakr233/Asspp/releases/download/4.2.2/Asspp.ipa · 官方版本 4.2.2 · 2026-10-20 UTC",
       "localizedDescription": "版本公告来自 https://github.com/Lakr233/Asspp/releases/tag/4.2.2",
       "version": "4.2.2",
       "versionDate": "2026-10-20T03:08:48Z",

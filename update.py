@@ -76,13 +76,13 @@ def catalogue_entry(project, release):
         "localizedDescription": f"版本公告来自 {release['html_url']}",
         "version": tag.removeprefix("v"),
         "versionDate": published,
+        "downloadURL": "XXXX",
     }
-    if project["repository"] in VERSION_ONLY_REPOSITORIES:
-        return entry
-
-    asset = release_asset(project["repository"], release)
-    if asset:
-        entry.update(downloadURL=asset["browser_download_url"], size=asset["size"])
+    if project["repository"] not in VERSION_ONLY_REPOSITORIES:
+        asset = release_asset(project["repository"], release)
+        if asset:
+            entry.update(downloadURL=asset["browser_download_url"], size=asset["size"])
+    entry["subtitle"] = f"downloadURL: {entry['downloadURL']} · {entry['subtitle']}"
     return entry
 
 
