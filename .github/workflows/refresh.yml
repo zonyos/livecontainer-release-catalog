@@ -1,5 +1,9 @@
 name: Refresh release catalogue
 on:
+  push:
+    paths:
+      - 'update.py'
+      - '.github/workflows/**'
   schedule:
     - cron: '23 * * * *'
   workflow_dispatch:
