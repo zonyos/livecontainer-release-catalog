@@ -72,7 +72,7 @@ def catalogue_entry(project):
         "downloadURL": "XXXX",
     }
     configured_url = project.get("downloadURL")
-    if configured_url and configured_url != "XXXX":
+    if configured_url != "XXXX":
         preferred_filename = name + ".ipa"
         if configured_url:
             latest_prefix = f"https://github.com/{project['repository']}/releases/latest/download/"
