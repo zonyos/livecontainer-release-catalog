@@ -7,11 +7,6 @@ from datetime import datetime
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
-
-# 这两个项目沿用现有的版本公告模式。
-# VERSION_ONLY_REPOSITORIES = {"huamidev/GestaltX", "jailbreakdotparty/Erosion"}
-
-
 def latest_release(repository):
     response = subprocess.check_output([
         "curl", "--fail", "--silent", "--show-error", "--location",
@@ -122,7 +117,7 @@ def main():
     source = {
         "name": "、".join(app["name"] for app in apps),
         "identifier": "personal.gestaltx.erosion.releases",
-        "subtitle": "最新版",
+        "subtitle": "官方正式版公告",
         "description": "在每个应用的副标题查看官方最新版本及发布日期。",
         "apps": apps,
     }
