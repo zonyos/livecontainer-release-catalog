@@ -8,7 +8,7 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 
-MAX_RELEASES = 5  # 每个项目最多保留多少个版本（1 个最新版 + 最多 4 个历史版本）
+MAX_RELEASES = 5  # 每个项目最多拉取多少个正式版（1 个最新版进 source.json，其余旧版进 history.json）
 SOURCE_ICON_URL = (
     "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/"
     "Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png"
@@ -74,6 +74,7 @@ def catalogue_entries(project):
         preferred_filename = unquote(configured_url.removeprefix(latest_prefix))
 
     entries = []
+    versions = []
     for release in published_releases(repository):
         asset = release_asset(repository, release, preferred_filename)
         if not asset:
@@ -81,27 +82,46 @@ def catalogue_entries(project):
         tag = release["tag_name"]
         published = release["published_at"]
         day = datetime.fromisoformat(published.replace("Z", "+00:00")).date()
+        version_str = tag.removeprefix("v")
+        description = f"版本公告来自 {release['html_url']}"
+        download_url = asset["browser_download_url"]
+        size = asset["size"]
+
         is_latest = len(entries) == 0
         entries.append({
             "name": name if is_latest else f"{name} ({tag})",
             "bundleIdentifier": bundle,
             "developerName": author,
-            "subtitle": f"{'最新版' if is_latest else '历史版本'} {tag} · {day} UTC",
-            "localizedDescription": f"版本公告来自 {release['html_url']}",
+            "subtitle": f"{'官方版本' if is_latest else '历史版本'} {tag} · {day} UTC",
+            "localizedDescription": description,
             "iconURL": icon_url,
-            "version": tag.removeprefix("v"),
+            "version": version_str,
             "versionDate": published,
-            "downloadURL": asset["browser_download_url"],
-            "size": asset["size"],
+            "downloadURL": download_url,
+            "size": size,
+        })
+        versions.append({
+            "version": version_str,
+            "date": published,
+            "localizedDescription": description,
+            "downloadURL": download_url,
+            "size": size,
         })
 
     if not entries:
         raise ValueError(f"Expected at least one valid IPA release for {repository}")
-    return entries
+
+    entries[0]["versions"] = versions
+    return entries[0], entries[1:]
+
+
+def write_json(path, payload):
+    temporary = path.with_suffix(".tmp")
+    temporary.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    os.replace(temporary, path)
 
 
 def main():
-    output = Path(__file__).with_name("source.json")
     projects = [
         # 官方发布页 https://github.com/huamidev/GestaltX/releases/latest
         {
@@ -118,7 +138,7 @@ def main():
         # 官方发布页 https://github.com/Kianuni/Erosion-CN/releases/latest
         {
             "repository": "Kianuni/Erosion-CN",
-            "bundleIdentifier": "com.jbdotparty.Erosion.cn",
+            "bundleIdentifier": "com.jbdotparty.Erosion",
             "iconURL": "https://raw.githubusercontent.com/Kianuni/Erosion-CN/main/PreviewIcon.png",
         },
         # 官方发布页 https://github.com/Lakr233/Asspp/releases/latest
@@ -129,22 +149,37 @@ def main():
         },
     ]
 
-    grouped_entries = [catalogue_entries(project) for project in projects]
-    # 列表最上方先展示所有项目的最新版，下方再展示各项目的历史版本
-    latest_apps = [group[0] for group in grouped_entries]
-    history_apps = [entry for group in grouped_entries for entry in group[1:]]
+    latest_apps = []
+    history_apps = []
+    for project in projects:
+        latest_entry, older_entries = catalogue_entries(project)
+        latest_apps.append(latest_entry)
+        history_apps.extend(older_entries)
 
+    joined_names = "、".join(app["name"] for app in latest_apps)
+
+    # 1. 主源：仅包含 4 个项目的最新版
     source = {
-        "name": "、".join(group[0]["name"] for group in grouped_entries),
+        "name": joined_names,
         "identifier": "personal.gestaltx.erosion.releases",
-        "subtitle": "最新版与历史版本",
-        "description": "列表顶部为各应用最新版，下方为历史版本（可通过顶部搜索框按应用名筛选）。",
+        "subtitle": "最新版",
+        "description": "在每个应用的副标题查看官方最新版本及发布日期。",
         "iconURL": SOURCE_ICON_URL,
-        "apps": latest_apps + history_apps,
+        "apps": latest_apps,
     }
-    temporary = output.with_suffix(".tmp")
-    temporary.write_text(json.dumps(source, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    os.replace(temporary, output)
+    write_json(Path(__file__).with_name("source.json"), source)
+
+    # 2. 历史版本源：按应用分组展示旧版本，在 LiveContainer 中可单独折叠收起
+    history_source = {
+        "name": f"{joined_names} 历史版本",
+        "identifier": "personal.gestaltx.erosion.releases.history",
+        "subtitle": "历史旧版回退",
+        "description": "各项目的历史正式版本归档，供降级回退安装使用。",
+        "iconURL": SOURCE_ICON_URL,
+        "tintColor": "#8E8E93",
+        "apps": history_apps,
+    }
+    write_json(Path(__file__).with_name("history.json"), history_source)
 
 
 if __name__ == "__main__":
