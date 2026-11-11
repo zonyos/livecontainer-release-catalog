@@ -7,15 +7,6 @@ from datetime import datetime
 from pathlib import Path
 
 
-# GestaltX 和 Erosion 的版本公告使用以下下载字段占位示例：
-# "downloadURL": "XXXX"
-PROJECTS = (
-    ("huamidev/GestaltX", "com.huami.gestultx"),
-    ("jailbreakdotparty/Erosion", "com.jbdotparty.Erosion"),
-    ("Lakr233/Asspp", "wiki.qaq.Asspp"),
-)
-
-
 def latest_release(repository):
     response = subprocess.check_output([
         "curl", "--fail", "--silent", "--show-error", "--location",
@@ -57,6 +48,8 @@ def asspp_download_entry(entry, release, previous_apps):
         if len(packages) != 1:
             raise ValueError("Cannot identify the standard Asspp IPA among the release assets")
     asset = packages[0]
+    if not asset["browser_download_url"].startswith("https://github.com/Lakr233/Asspp/releases/download/"):
+        raise ValueError("Expected an official Asspp release asset")
     entry.update(
         version=release["tag_name"].removeprefix("v"),
         versionDate=release["published_at"],
@@ -66,15 +59,37 @@ def asspp_download_entry(entry, release, previous_apps):
     return entry
 
 
+# XXXX 表示只发布版本信息；Asspp 的下载配置在生成目录时读取官方附件。
+PROJECTS = (
+    {
+        "repository": "huamidev/GestaltX",
+        "bundleIdentifier": "com.huami.gestultx",
+        "downloadURL": "XXXX",
+    },
+    {
+        "repository": "jailbreakdotparty/Erosion",
+        "bundleIdentifier": "com.jbdotparty.Erosion",
+        "downloadURL": "XXXX",
+    },
+    {
+        "repository": "Lakr233/Asspp",
+        "bundleIdentifier": "wiki.qaq.Asspp",
+        "downloadURL": asspp_download_entry,
+    },
+)
+
+
 def main():
     output = Path(__file__).with_name("source.json")
     previous_apps = json.loads(output.read_text(encoding="utf-8"))["apps"] if output.exists() else []
     apps = []
-    for repository, bundle_id in PROJECTS:
+    for project in PROJECTS:
+        repository = project["repository"]
         release = latest_release(repository)
-        entry = catalogue_entry(repository, bundle_id, release)
-        if repository == "Lakr233/Asspp":
-            entry = asspp_download_entry(entry, release, previous_apps)
+        entry = catalogue_entry(repository, project["bundleIdentifier"], release)
+        download_config = project["downloadURL"]
+        if download_config != "XXXX":
+            entry = download_config(entry, release, previous_apps)
         apps.append(entry)
     source = {
         "name": "GestaltX、Erosion 与 Asspp 更新",
