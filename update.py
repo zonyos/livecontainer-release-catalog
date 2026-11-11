@@ -8,24 +8,6 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 
-PROJECTS = (
-    {
-        # 官方发布页 https://github.com/huamidev/GestaltX/releases/latest
-        "repository": "huamidev/GestaltX",
-        "bundleIdentifier": "com.huami.gestultx",
-    },
-    {
-        # 官方发布页 https://github.com/jailbreakdotparty/Erosion/releases/latest
-        "repository": "jailbreakdotparty/Erosion",
-        "bundleIdentifier": "com.jbdotparty.Erosion",
-    },
-    {
-        # 官方发布页 https://github.com/Lakr233/Asspp/releases/latest
-        "repository": "Lakr233/Asspp",
-        "bundleIdentifier": "wiki.qaq.Asspp",
-    },
-)
-
 # 这两个项目沿用现有的版本公告模式。
 VERSION_ONLY_REPOSITORIES = {"huamidev/GestaltX", "jailbreakdotparty/Erosion"}
 
@@ -43,14 +25,24 @@ def latest_release(repository):
     return release
 
 
-def release_asset(repository, release):
+def release_asset(repository, release, preferred_filename):
     packages = [
         asset for asset in release["assets"]
         if asset["name"].casefold().endswith(".ipa") and asset["state"] == "uploaded" and asset["size"] > 0
     ]
     if len(packages) > 1:
-        preferred_name = repository.split("/")[1].casefold() + ".ipa"
-        packages = [asset for asset in packages if asset["name"].casefold() == preferred_name]
+        stem = preferred_filename.removesuffix(".ipa").casefold()
+        standard = [asset for asset in packages if asset["name"].casefold() == stem + ".ipa"]
+        if standard:
+            packages = standard
+        else:
+            tag = release["tag_name"].casefold()
+            names = {
+                f"{stem}{separator}{version}.ipa"
+                for separator in ("-", "_", ".", " ")
+                for version in (tag, tag.removeprefix("v"))
+            }
+            packages = [asset for asset in packages if asset["name"].casefold() in names]
     if len(packages) != 1:
         return None
 
@@ -62,7 +54,8 @@ def release_asset(repository, release):
     return asset
 
 
-def catalogue_entry(project, release):
+def catalogue_entry(project):
+    release = latest_release(project["repository"])
     author, name = project["repository"].split("/")
     tag = release["tag_name"]
     published = release["published_at"]
@@ -78,8 +71,15 @@ def catalogue_entry(project, release):
         "versionDate": published,
         "downloadURL": "XXXX",
     }
-    if project["repository"] not in VERSION_ONLY_REPOSITORIES:
-        asset = release_asset(project["repository"], release)
+    configured_url = project.get("downloadURL")
+    if project["repository"] not in VERSION_ONLY_REPOSITORIES and configured_url != "XXXX":
+        preferred_filename = name + ".ipa"
+        if configured_url:
+            latest_prefix = f"https://github.com/{project['repository']}/releases/latest/download/"
+            if not configured_url.startswith(latest_prefix):
+                raise ValueError(f"Expected an official latest-release link for {name}")
+            preferred_filename = unquote(configured_url.removeprefix(latest_prefix))
+        asset = release_asset(project["repository"], release, preferred_filename)
         if asset:
             entry.update(downloadURL=asset["browser_download_url"], size=asset["size"])
     entry["subtitle"] = f"downloadURL: {entry['downloadURL']} · {entry['subtitle']}"
@@ -88,10 +88,26 @@ def catalogue_entry(project, release):
 
 def main():
     output = Path(__file__).with_name("source.json")
-    apps = []
-    for project in PROJECTS:
-        release = latest_release(project["repository"])
-        apps.append(catalogue_entry(project, release))
+    apps = [
+        # 官方发布页 https://github.com/huamidev/GestaltX/releases/latest
+        catalogue_entry({
+            "repository": "huamidev/GestaltX",
+            "bundleIdentifier": "com.huami.gestultx",
+            "downloadURL": "XXXX",
+        }),
+        # 官方发布页 https://github.com/jailbreakdotparty/Erosion/releases/latest
+        catalogue_entry({
+            "repository": "jailbreakdotparty/Erosion",
+            "bundleIdentifier": "com.jbdotparty.Erosion",
+            "downloadURL": "XXXX",
+        }),
+        # 官方发布页 https://github.com/Lakr233/Asspp/releases/latest
+        catalogue_entry({
+            "repository": "Lakr233/Asspp",
+            "bundleIdentifier": "wiki.qaq.Asspp",
+            "downloadURL": "https://github.com/Lakr233/Asspp/releases/latest/download/Asspp.ipa",
+        }),
+    ]
     names = [app["name"] for app in apps]
     title = "、".join(names[:-1]) + " 与 " + names[-1] if len(names) > 1 else "".join(names)
     source = {
