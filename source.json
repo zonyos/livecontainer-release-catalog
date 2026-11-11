@@ -1,5 +1,5 @@
 {
-  "name": "GestaltX 与 Erosion 更新",
+  "name": "GestaltX、Erosion 与 Asspp 更新",
   "identifier": "personal.gestaltx.erosion.releases",
   "subtitle": "官方正式版公告",
   "description": "在每个应用的副标题查看官方最新版本及发布日期。",
@@ -17,6 +17,17 @@
       "developerName": "jailbreakdotparty",
       "subtitle": "官方版本 0.3.1 · 2026-11-10 UTC",
       "localizedDescription": "版本公告来自 https://github.com/jailbreakdotparty/Erosion/releases/tag/0.3.1"
+    },
+    {
+      "name": "Asspp",
+      "bundleIdentifier": "wiki.qaq.Asspp",
+      "developerName": "Lakr233",
+      "subtitle": "官方版本 4.2.2 · 2026-10-20 UTC",
+      "localizedDescription": "版本公告来自 https://github.com/Lakr233/Asspp/releases/tag/4.2.2",
+      "version": "4.2.2",
+      "versionDate": "2026-10-20T03:08:48Z",
+      "downloadURL": "https://github.com/Lakr233/Asspp/releases/download/4.2.2/Asspp.ipa",
+      "size": 16458246
     }
   ]
 }
