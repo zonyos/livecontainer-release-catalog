@@ -1,0 +1,33 @@
+name: Refresh release catalogue
+on:
+  schedule:
+    - cron: '23 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency: refresh-release-catalogue
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: python3 update.py
+      - uses: actions/checkout@v4
+        with:
+          repository: zonyos/livecontainer-release-catalog
+          ref: main
+          path: catalogue
+          ssh-key: ${{ secrets.CATALOG_DEPLOY_KEY }}
+      - name: Publish changed catalogue
+        run: |
+          cp source.json catalogue/source.json
+          cd catalogue
+          if ! git diff --quiet -- source.json; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add -- source.json
+            git commit -m 'Refresh official release versions'
+            git push
+          fi
