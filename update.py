@@ -119,6 +119,12 @@ def main():
         #     "bundleIdentifier": "com.example.reader",
         #     "downloadURL": "https://github.com/OWNER/ExampleReader/releases/latest/download/ExampleReader.ipa",
         # }),
+        # abc/def 示例：即使每次发布都用 def_版本号.ipa，也可以省略 downloadURL。
+        # 例如 tag 为 v1.0.6 时，脚本会匹配 def_1.0.6.ipa，并读取该附件的实际下载地址。
+        # catalogue_entry({
+        #     "repository": "abc/def",
+        #     "bundleIdentifier": "com.example.def",  # 换成 App 的实际标识符
+        # }),
     ]
     names = [app["name"] for app in apps]
     title = "、".join(names[:-1]) + " 与 " + names[-1] if len(names) > 1 else "".join(names)
