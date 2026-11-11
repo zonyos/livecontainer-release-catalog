@@ -1,28 +1,30 @@
 {
-  "name": "GestaltX、Erosion、Asspp",
+  "name": "GestaltX、Erosion 与 Asspp 更新",
   "identifier": "personal.gestaltx.erosion.releases",
-  "subtitle": "最新版",
+  "subtitle": "官方正式版公告",
   "description": "在每个应用的副标题查看官方最新版本及发布日期。",
   "apps": [
     {
       "name": "GestaltX",
       "bundleIdentifier": "com.huami.gestultx",
       "developerName": "huamidev",
-      "subtitle": "downloadURL: XXXX · 官方版本 v1.0.5 · 2026-11-11 UTC",
+      "subtitle": "downloadURL: https://github.com/huamidev/GestaltX/releases/download/v1.0.5/GestaltX_1.0.5.ipa · 官方版本 v1.0.5 · 2026-11-11 UTC",
       "localizedDescription": "版本公告来自 https://github.com/huamidev/GestaltX/releases/tag/v1.0.5",
       "version": "1.0.5",
       "versionDate": "2026-11-11T03:45:16Z",
-      "downloadURL": "XXXX"
+      "downloadURL": "https://github.com/huamidev/GestaltX/releases/download/v1.0.5/GestaltX_1.0.5.ipa",
+      "size": 2942882
     },
     {
       "name": "Erosion",
       "bundleIdentifier": "com.jbdotparty.Erosion",
       "developerName": "jailbreakdotparty",
-      "subtitle": "downloadURL: XXXX · 官方版本 0.3.1 · 2026-11-10 UTC",
+      "subtitle": "downloadURL: https://github.com/jailbreakdotparty/Erosion/releases/download/0.3.1/Erosion_v0.3.1.ipa · 官方版本 0.3.1 · 2026-11-10 UTC",
       "localizedDescription": "版本公告来自 https://github.com/jailbreakdotparty/Erosion/releases/tag/0.3.1",
       "version": "0.3.1",
       "versionDate": "2026-11-10T04:44:50Z",
-      "downloadURL": "XXXX"
+      "downloadURL": "https://github.com/jailbreakdotparty/Erosion/releases/download/0.3.1/Erosion_v0.3.1.ipa",
+      "size": 2415476
     },
     {
       "name": "Asspp",
