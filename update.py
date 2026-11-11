@@ -122,7 +122,7 @@ def main():
     source = {
         "name": "、".join(app["name"] for app in apps),
         "identifier": "personal.gestaltx.erosion.releases",
-        "subtitle": "官方正式版公告",
+        "subtitle": "最新版",
         "description": "在每个应用的副标题查看官方最新版本及发布日期。",
         "apps": apps,
     }
