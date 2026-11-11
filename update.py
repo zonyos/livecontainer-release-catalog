@@ -107,24 +107,17 @@ def main():
             "bundleIdentifier": "wiki.qaq.Asspp",
             "downloadURL": "https://github.com/Lakr233/Asspp/releases/latest/download/Asspp.ipa",
         }),
-        # 新增 App 模板：复制下面五行到列表的右方括号之前，保留缩进，去掉每行开头的「# 」。
-        # repository 填 GitHub 的「作者/仓库名」，bundleIdentifier 填 App 本身的标识符。
-        # 只有一个 IPA 时可以删掉 downloadURL。遇到多个 IPA，省略该行会用「仓库名.ipa」作首选。
-        # 如果有多个 IPA，且想选的文件名与仓库名不同，保留 downloadURL，填写该附件的官方最新版地址。
-        # 以 Asspp 为例，仓库名就是 Asspp，保留上面的地址或删掉该行，首选文件名都是 Asspp.ipa。
-        # 假设下次 tag 是 v4.2.3，只有 Asspp_4.2.3.ipa，脚本会取它的实际链接，无需手改版本号。
-        # 若 Asspp.ipa 与 Asspp_4.2.3.ipa 同时存在，优先选 Asspp.ipa。只想显示版本时填 "XXXX"。
-        # catalogue_entry({
-        #     "repository": "OWNER/ExampleReader",
-        #     "bundleIdentifier": "com.example.reader",
-        #     "downloadURL": "https://github.com/OWNER/ExampleReader/releases/latest/download/ExampleReader.ipa",
-        # }),
-        # abc/def 示例：即使每次发布都用 def_版本号.ipa，也可以省略 downloadURL。
-        # 例如 tag 为 v1.0.6 时，脚本会匹配 def_1.0.6.ipa，并读取该附件的实际下载地址。
+        # 新增 App：复制下面四行，去掉行首的「# 」，保留缩进和末尾逗号，替换两个示例值。
         # catalogue_entry({
         #     "repository": "abc/def",
-        #     "bundleIdentifier": "com.example.def",  # 换成 App 的实际标识符
+        #     "bundleIdentifier": "com.example.def",
         # }),
+        # 默认省略 downloadURL。只有一个 IPA 时直接选用；有多个时先找「仓库名.ipa」，
+        # 再按当前 tag 找带版本号的文件。例如 abc/def 在 v1.0.6 可以匹配 def_1.0.6.ipa。
+        # 上面的 Asspp 显式指定了 Asspp.ipa，恰好与默认首选同名，所以这行可以省略。
+        # 若 tag 为 v4.2.3，Asspp.ipa 和 Asspp_4.2.3.ipa 同时存在时优先选前者。
+        # 可选：若有多个 IPA，想选与仓库名不同的附件，可添加 downloadURL 并填写该附件的官方最新版地址。
+        # 如果只想显示版本，可添加 "downloadURL": "XXXX"。
     ]
     names = [app["name"] for app in apps]
     title = "、".join(names[:-1]) + " 与 " + names[-1] if len(names) > 1 else "".join(names)
