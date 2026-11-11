@@ -9,14 +9,18 @@
       "bundleIdentifier": "com.huami.gestultx",
       "developerName": "huamidev",
       "subtitle": "官方版本 v1.0.5 · 2026-11-11 UTC",
-      "localizedDescription": "版本公告来自 https://github.com/huamidev/GestaltX/releases/tag/v1.0.5"
+      "localizedDescription": "版本公告来自 https://github.com/huamidev/GestaltX/releases/tag/v1.0.5",
+      "version": "1.0.5",
+      "versionDate": "2026-11-11T03:45:16Z"
     },
     {
       "name": "Erosion",
       "bundleIdentifier": "com.jbdotparty.Erosion",
       "developerName": "jailbreakdotparty",
       "subtitle": "官方版本 0.3.1 · 2026-11-10 UTC",
-      "localizedDescription": "版本公告来自 https://github.com/jailbreakdotparty/Erosion/releases/tag/0.3.1"
+      "localizedDescription": "版本公告来自 https://github.com/jailbreakdotparty/Erosion/releases/tag/0.3.1",
+      "version": "0.3.1",
+      "versionDate": "2026-11-10T04:44:50Z"
     },
     {
       "name": "Asspp",
