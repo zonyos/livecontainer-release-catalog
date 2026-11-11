@@ -5,29 +5,29 @@ import os
 import subprocess
 from datetime import datetime
 from pathlib import Path
+from urllib.parse import unquote, urlsplit
 
 
-# downloadURL 为官方最新版附件地址，XXXX 表示只展示发布信息。
 PROJECTS = (
     {
         # 官方发布页 https://github.com/huamidev/GestaltX/releases/latest
         "repository": "huamidev/GestaltX",
         "bundleIdentifier": "com.huami.gestultx",
-        "downloadURL": "XXXX",
     },
     {
         # 官方发布页 https://github.com/jailbreakdotparty/Erosion/releases/latest
         "repository": "jailbreakdotparty/Erosion",
         "bundleIdentifier": "com.jbdotparty.Erosion",
-        "downloadURL": "XXXX",
     },
     {
         # 官方发布页 https://github.com/Lakr233/Asspp/releases/latest
         "repository": "Lakr233/Asspp",
         "bundleIdentifier": "wiki.qaq.Asspp",
-        "downloadURL": "https://github.com/Lakr233/Asspp/releases/latest/download/Asspp.ipa",
     },
 )
+
+# 这两个项目沿用现有的版本公告模式。
+VERSION_ONLY_REPOSITORIES = {"huamidev/GestaltX", "jailbreakdotparty/Erosion"}
 
 
 def latest_release(repository):
@@ -43,32 +43,26 @@ def latest_release(repository):
     return release
 
 
-def release_asset(project, release, releases_url):
-    configured_url = project["downloadURL"]
-    latest_prefix = releases_url + "latest/download/"
-    if not configured_url.startswith(latest_prefix):
-        raise ValueError(f"Expected a latest-release asset URL for {project['repository']}")
-    preferred_name = configured_url.removeprefix(latest_prefix).casefold()
-    if "/" in preferred_name or not preferred_name.endswith(".ipa"):
-        raise ValueError(f"Expected an IPA filename in the download URL for {project['repository']}")
+def release_asset(repository, release):
     packages = [
         asset for asset in release["assets"]
         if asset["name"].casefold().endswith(".ipa") and asset["state"] == "uploaded" and asset["size"] > 0
     ]
-    if not packages:
-        return None
     if len(packages) > 1:
+        preferred_name = repository.split("/")[1].casefold() + ".ipa"
         packages = [asset for asset in packages if asset["name"].casefold() == preferred_name]
-        if len(packages) != 1:
-            raise ValueError(f"Ambiguous IPA for {project['repository']}")
+    if len(packages) != 1:
+        return None
 
     asset = packages[0]
-    if not asset["browser_download_url"].startswith(releases_url + "download/"):
-        raise ValueError(f"Unverified download origin for {project['repository']}")
+    url = urlsplit(asset["browser_download_url"])
+    expected_path = f"/{repository}/releases/download/{release['tag_name']}/{asset['name']}"
+    if url.scheme != "https" or url.netloc != "github.com" or unquote(url.path) != expected_path:
+        return None
     return asset
 
 
-def catalogue_entry(project, release, previous_apps):
+def catalogue_entry(project, release):
     author, name = project["repository"].split("/")
     tag = release["tag_name"]
     published = release["published_at"]
@@ -83,29 +77,21 @@ def catalogue_entry(project, release, previous_apps):
         "version": tag.removeprefix("v"),
         "versionDate": published,
     }
-    if project["downloadURL"] == "XXXX":
+    if project["repository"] in VERSION_ONLY_REPOSITORIES:
         return entry
 
-    releases_url = f"https://github.com/{project['repository']}/releases/"
-    asset = release_asset(project, release, releases_url)
+    asset = release_asset(project["repository"], release)
     if asset:
         entry.update(downloadURL=asset["browser_download_url"], size=asset["size"])
-    else:
-        previous = previous_apps.get(bundle, {})
-        if previous.get("downloadURL", "").startswith(releases_url + "download/"):
-            return previous
-        raise ValueError(f"No published IPA or previous downloadable entry for {name}")
     return entry
 
 
 def main():
     output = Path(__file__).with_name("source.json")
-    previous_entries = json.loads(output.read_text(encoding="utf-8"))["apps"] if output.exists() else []
-    previous_apps = {app["bundleIdentifier"]: app for app in previous_entries}
     apps = []
     for project in PROJECTS:
         release = latest_release(project["repository"])
-        apps.append(catalogue_entry(project, release, previous_apps))
+        apps.append(catalogue_entry(project, release))
     names = [app["name"] for app in apps]
     title = "、".join(names[:-1]) + " 与 " + names[-1] if len(names) > 1 else "".join(names)
     source = {
