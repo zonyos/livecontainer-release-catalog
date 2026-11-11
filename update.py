@@ -12,6 +12,7 @@ from pathlib import Path
 PROJECTS = (
     ("huamidev/GestaltX", "com.huami.gestultx"),
     ("jailbreakdotparty/Erosion", "com.jbdotparty.Erosion"),
+    ("Lakr233/Asspp", "wiki.qaq.Asspp"),
 )
 
 
@@ -41,17 +42,14 @@ def catalogue_entry(repository, bundle_id, release):
     }
 
 
-def asspp_entry(previous_apps):
-    repository = "Lakr233/Asspp"
-    bundle_id = "wiki.qaq.Asspp"
-    release = latest_release(repository)
+def asspp_download_entry(entry, release, previous_apps):
     packages = [
         asset for asset in release["assets"]
         if asset["name"].lower().endswith(".ipa") and asset["state"] == "uploaded" and asset["size"] > 0
     ]
     if not packages:
         for app in previous_apps:
-            if app["bundleIdentifier"] == bundle_id and app.get("downloadURL"):
+            if app["bundleIdentifier"] == entry["bundleIdentifier"] and app.get("downloadURL"):
                 return app
         raise ValueError("Asspp has no published IPA or previous downloadable entry")
     if len(packages) > 1:
@@ -59,7 +57,6 @@ def asspp_entry(previous_apps):
         if len(packages) != 1:
             raise ValueError("Cannot identify the standard Asspp IPA among the release assets")
     asset = packages[0]
-    entry = catalogue_entry(repository, bundle_id, release)
     entry.update(
         version=release["tag_name"].removeprefix("v"),
         versionDate=release["published_at"],
@@ -72,8 +69,13 @@ def asspp_entry(previous_apps):
 def main():
     output = Path(__file__).with_name("source.json")
     previous_apps = json.loads(output.read_text(encoding="utf-8"))["apps"] if output.exists() else []
-    apps = [catalogue_entry(repo, bundle, latest_release(repo)) for repo, bundle in PROJECTS]
-    apps.append(asspp_entry(previous_apps))
+    apps = []
+    for repository, bundle_id in PROJECTS:
+        release = latest_release(repository)
+        entry = catalogue_entry(repository, bundle_id, release)
+        if repository == "Lakr233/Asspp":
+            entry = asspp_download_entry(entry, release, previous_apps)
+        apps.append(entry)
     source = {
         "name": "GestaltX、Erosion 与 Asspp 更新",
         "identifier": "personal.gestaltx.erosion.releases",
