@@ -26,7 +26,6 @@ PROJECTS = (
         "repository": "Lakr233/Asspp",
         "bundleIdentifier": "wiki.qaq.Asspp",
         "downloadURL": "https://github.com/Lakr233/Asspp/releases/latest/download/Asspp.ipa",
-        "publishIPA": True,
     },
 )
 
@@ -50,6 +49,8 @@ def release_asset(project, release, releases_url):
     if not configured_url.startswith(latest_prefix):
         raise ValueError(f"Expected a latest-release asset URL for {project['repository']}")
     preferred_name = configured_url.removeprefix(latest_prefix).casefold()
+    if "/" in preferred_name or not preferred_name.endswith(".ipa"):
+        raise ValueError(f"Expected an IPA filename in the download URL for {project['repository']}")
     packages = [
         asset for asset in release["assets"]
         if asset["name"].casefold().endswith(".ipa") and asset["state"] == "uploaded" and asset["size"] > 0
@@ -82,7 +83,7 @@ def catalogue_entry(project, release, previous_apps):
         "version": tag.removeprefix("v"),
         "versionDate": published,
     }
-    if not project.get("publishIPA", False) or project["downloadURL"] == "XXXX":
+    if project["downloadURL"] == "XXXX":
         return entry
 
     releases_url = f"https://github.com/{project['repository']}/releases/"
