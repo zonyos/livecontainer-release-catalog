@@ -7,6 +7,8 @@ from datetime import datetime
 from pathlib import Path
 
 
+# GestaltX 和 Erosion 的版本公告使用以下下载字段占位示例：
+# "downloadURL": "XXXX"
 PROJECTS = (
     ("huamidev/GestaltX", "com.huami.gestultx"),
     ("jailbreakdotparty/Erosion", "com.jbdotparty.Erosion"),
