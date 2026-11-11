@@ -14,23 +14,23 @@ PROJECTS = (
         "repository": "huamidev/GestaltX",
         "bundleIdentifier": "com.huami.gestultx",
         "downloadURL": "XXXX",
+        "trustedIPAOrigin": None,
     },
     {
         # 官方发布页 https://github.com/jailbreakdotparty/Erosion/releases/latest
         "repository": "jailbreakdotparty/Erosion",
         "bundleIdentifier": "com.jbdotparty.Erosion",
         "downloadURL": "XXXX",
+        "trustedIPAOrigin": None,
     },
     {
         # 官方发布页 https://github.com/Lakr233/Asspp/releases/latest
         "repository": "Lakr233/Asspp",
         "bundleIdentifier": "wiki.qaq.Asspp",
         "downloadURL": "https://github.com/Lakr233/Asspp/releases/latest/download/Asspp.ipa",
+        "trustedIPAOrigin": "https://github.com/Lakr233/Asspp/releases/download/",
     },
 )
-
-
-TRUSTED_IPA_ORIGINS = {"https://github.com/Lakr233/Asspp/releases/download/"}
 
 
 def latest_release(repository):
@@ -52,6 +52,9 @@ def release_asset(project, release):
         return None
 
     repository_url = f"https://github.com/{project['repository']}/releases/"
+    origin = project["trustedIPAOrigin"]
+    if origin != repository_url + "download/":
+        raise ValueError(f"Unverified download origin for {project['repository']}")
     latest_prefix = repository_url + "latest/download/"
     if not configured_url.startswith(latest_prefix):
         raise ValueError(f"Expected a latest-release asset URL for {project['repository']}")
@@ -68,8 +71,7 @@ def release_asset(project, release):
             raise ValueError(f"Ambiguous IPA for {project['repository']}")
 
     asset = packages[0]
-    origin = repository_url + "download/"
-    if origin not in TRUSTED_IPA_ORIGINS or not asset["browser_download_url"].startswith(origin):
+    if not asset["browser_download_url"].startswith(origin):
         raise ValueError(f"Unverified download origin for {project['repository']}")
     return asset
 
@@ -94,7 +96,7 @@ def catalogue_entry(project, release, previous_apps):
         entry.update(downloadURL=asset["browser_download_url"], size=asset["size"])
     elif project["downloadURL"] != "XXXX":
         previous = previous_apps.get(bundle, {})
-        if previous.get("downloadURL"):
+        if previous.get("downloadURL", "").startswith(project["trustedIPAOrigin"]):
             return previous
         raise ValueError(f"No published IPA or previous downloadable entry for {name}")
     return entry
@@ -108,8 +110,10 @@ def main():
     for project in PROJECTS:
         release = latest_release(project["repository"])
         apps.append(catalogue_entry(project, release, previous_apps))
+    names = [app["name"] for app in apps]
+    title = "、".join(names[:-1]) + " 与 " + names[-1] if len(names) > 1 else "".join(names)
     source = {
-        "name": "GestaltX、Erosion 与 Asspp 更新",
+        "name": f"{title} 更新".strip(),
         "identifier": "personal.gestaltx.erosion.releases",
         "subtitle": "官方正式版公告",
         "description": "在每个应用的副标题查看官方最新版本及发布日期。",
