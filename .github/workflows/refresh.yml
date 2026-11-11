@@ -4,26 +4,16 @@ on:
     - cron: '23 * * * *'
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 concurrency: refresh-release-catalogue
 jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
+      - uses: actions/checkout@v5
       - run: python3 update.py
-      - uses: actions/checkout@v4
-        with:
-          repository: zonyos/livecontainer-release-catalog
-          ref: main
-          path: catalogue
-          ssh-key: ${{ secrets.CATALOG_DEPLOY_KEY }}
       - name: Publish changed catalogue
         run: |
-          cp source.json catalogue/source.json
-          cd catalogue
           if ! git diff --quiet -- source.json; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
