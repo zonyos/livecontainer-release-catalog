@@ -1,249 +1,205 @@
 {
   "name": "GestaltX、Erosion、Erosion-CN、Asspp",
   "identifier": "personal.gestaltx.erosion.releases",
-  "subtitle": "最新版与历史版本",
-  "description": "列表顶部为各应用最新版，下方为历史版本（可通过顶部搜索框按应用名筛选）。",
+  "subtitle": "最新版",
+  "description": "在每个应用的副标题查看官方最新版本及发布日期。",
   "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
   "apps": [
     {
       "name": "GestaltX",
       "bundleIdentifier": "com.huami.gestultx",
       "developerName": "huamidev",
-      "subtitle": "最新版 v1.0.5 · 2026-11-11 UTC",
+      "subtitle": "官方版本 v1.0.5 · 2026-11-11 UTC",
       "localizedDescription": "版本公告来自 https://github.com/huamidev/GestaltX/releases/tag/v1.0.5",
       "iconURL": "https://raw.githubusercontent.com/huamidev/GestaltX/main/GestaltX/Assets.xcassets/AppIcon.appiconset/AppIcon.png",
       "version": "1.0.5",
       "versionDate": "2026-11-11T03:45:16Z",
       "downloadURL": "https://github.com/huamidev/GestaltX/releases/download/v1.0.5/GestaltX_1.0.5.ipa",
-      "size": 2942882
+      "size": 2942882,
+      "versions": [
+        {
+          "version": "1.0.5",
+          "date": "2026-11-11T03:45:16Z",
+          "localizedDescription": "版本公告来自 https://github.com/huamidev/GestaltX/releases/tag/v1.0.5",
+          "downloadURL": "https://github.com/huamidev/GestaltX/releases/download/v1.0.5/GestaltX_1.0.5.ipa",
+          "size": 2942882
+        },
+        {
+          "version": "1.0.4",
+          "date": "2026-11-10T07:27:47Z",
+          "localizedDescription": "版本公告来自 https://github.com/huamidev/GestaltX/releases/tag/v1.0.4",
+          "downloadURL": "https://github.com/huamidev/GestaltX/releases/download/v1.0.4/GestaltX_1.0.4.ipa",
+          "size": 2865180
+        },
+        {
+          "version": "1.0.3",
+          "date": "2026-11-09T16:23:40Z",
+          "localizedDescription": "版本公告来自 https://github.com/huamidev/GestaltX/releases/tag/v1.0.3",
+          "downloadURL": "https://github.com/huamidev/GestaltX/releases/download/v1.0.3/GestaltX_1.0.3.ipa",
+          "size": 2744822
+        },
+        {
+          "version": "1.0.2",
+          "date": "2026-11-09T10:06:31Z",
+          "localizedDescription": "版本公告来自 https://github.com/huamidev/GestaltX/releases/tag/v1.0.2",
+          "downloadURL": "https://github.com/huamidev/GestaltX/releases/download/v1.0.2/GestaltX_1.0.2.ipa",
+          "size": 2489231
+        },
+        {
+          "version": "1.0.1",
+          "date": "2026-11-09T05:28:40Z",
+          "localizedDescription": "版本公告来自 https://github.com/huamidev/GestaltX/releases/tag/v1.0.1",
+          "downloadURL": "https://github.com/huamidev/GestaltX/releases/download/v1.0.1/GestaltX_1.0.1.ipa",
+          "size": 2459454
+        }
+      ]
     },
     {
       "name": "Erosion",
       "bundleIdentifier": "com.jbdotparty.Erosion",
       "developerName": "jailbreakdotparty",
-      "subtitle": "最新版 0.3.1 · 2026-11-10 UTC",
+      "subtitle": "官方版本 0.3.1 · 2026-11-10 UTC",
       "localizedDescription": "版本公告来自 https://github.com/jailbreakdotparty/Erosion/releases/tag/0.3.1",
       "iconURL": "https://raw.githubusercontent.com/jailbreakdotparty/Erosion/main/PreviewIcon.png",
       "version": "0.3.1",
       "versionDate": "2026-11-10T04:44:50Z",
       "downloadURL": "https://github.com/jailbreakdotparty/Erosion/releases/download/0.3.1/Erosion_v0.3.1.ipa",
-      "size": 2415476
+      "size": 2415476,
+      "versions": [
+        {
+          "version": "0.3.1",
+          "date": "2026-11-10T04:44:50Z",
+          "localizedDescription": "版本公告来自 https://github.com/jailbreakdotparty/Erosion/releases/tag/0.3.1",
+          "downloadURL": "https://github.com/jailbreakdotparty/Erosion/releases/download/0.3.1/Erosion_v0.3.1.ipa",
+          "size": 2415476
+        },
+        {
+          "version": "0.3",
+          "date": "2026-11-09T00:04:29Z",
+          "localizedDescription": "版本公告来自 https://github.com/jailbreakdotparty/Erosion/releases/tag/0.3",
+          "downloadURL": "https://github.com/jailbreakdotparty/Erosion/releases/download/0.3/Erosion_v0.3.ipa",
+          "size": 2484800
+        },
+        {
+          "version": "0.2.1",
+          "date": "2026-09-18T04:59:59Z",
+          "localizedDescription": "版本公告来自 https://github.com/jailbreakdotparty/Erosion/releases/tag/0.2.1",
+          "downloadURL": "https://github.com/jailbreakdotparty/Erosion/releases/download/0.2.1/Erosion_v0.2.1.ipa",
+          "size": 5414791
+        },
+        {
+          "version": "0.2",
+          "date": "2026-09-15T03:42:30Z",
+          "localizedDescription": "版本公告来自 https://github.com/jailbreakdotparty/Erosion/releases/tag/0.2",
+          "downloadURL": "https://github.com/jailbreakdotparty/Erosion/releases/download/0.2/Erosion_v0.2.ipa",
+          "size": 5409999
+        },
+        {
+          "version": "0.1",
+          "date": "2026-08-25T02:03:18Z",
+          "localizedDescription": "版本公告来自 https://github.com/jailbreakdotparty/Erosion/releases/tag/0.1",
+          "downloadURL": "https://github.com/jailbreakdotparty/Erosion/releases/download/0.1/Erosion_v0.1.ipa",
+          "size": 1025283
+        }
+      ]
     },
     {
       "name": "Erosion-CN",
-      "bundleIdentifier": "com.jbdotparty.Erosion.cn",
+      "bundleIdentifier": "com.jbdotparty.Erosion",
       "developerName": "Kianuni",
-      "subtitle": "最新版 v0.8.1 · 2026-11-11 UTC",
+      "subtitle": "官方版本 v0.8.1 · 2026-11-11 UTC",
       "localizedDescription": "版本公告来自 https://github.com/Kianuni/Erosion-CN/releases/tag/v0.8.1",
       "iconURL": "https://raw.githubusercontent.com/Kianuni/Erosion-CN/main/PreviewIcon.png",
       "version": "0.8.1",
       "versionDate": "2026-11-11T06:46:21Z",
       "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v0.8.1/Erosion_v0.8.1_zh-Hans.ipa",
-      "size": 6029106
+      "size": 6029106,
+      "versions": [
+        {
+          "version": "0.8.1",
+          "date": "2026-11-11T06:46:21Z",
+          "localizedDescription": "版本公告来自 https://github.com/Kianuni/Erosion-CN/releases/tag/v0.8.1",
+          "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v0.8.1/Erosion_v0.8.1_zh-Hans.ipa",
+          "size": 6029106
+        },
+        {
+          "version": "0.8.0",
+          "date": "2026-11-11T03:36:17Z",
+          "localizedDescription": "版本公告来自 https://github.com/Kianuni/Erosion-CN/releases/tag/v0.8.0",
+          "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v0.8.0/Erosion_v0.8.0_zh-Hans.ipa",
+          "size": 6021405
+        },
+        {
+          "version": "0.7.2",
+          "date": "2026-11-10T14:20:03Z",
+          "localizedDescription": "版本公告来自 https://github.com/Kianuni/Erosion-CN/releases/tag/v0.7.2",
+          "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v0.7.2/Erosion_v0.7.2_zh-Hans.ipa",
+          "size": 5769202
+        },
+        {
+          "version": "0.7.1",
+          "date": "2026-11-10T12:42:17Z",
+          "localizedDescription": "版本公告来自 https://github.com/Kianuni/Erosion-CN/releases/tag/v0.7.1",
+          "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v0.7.1/Erosion_v0.7.1_zh-Hans.ipa",
+          "size": 5733412
+        },
+        {
+          "version": "0.7.0",
+          "date": "2026-11-10T11:48:48Z",
+          "localizedDescription": "版本公告来自 https://github.com/Kianuni/Erosion-CN/releases/tag/v0.7.0",
+          "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v0.7.0/Erosion_v0.7.0_zh-Hans.ipa",
+          "size": 5782794
+        }
+      ]
     },
     {
       "name": "Asspp",
       "bundleIdentifier": "wiki.qaq.Asspp",
       "developerName": "Lakr233",
-      "subtitle": "最新版 4.2.2 · 2026-10-20 UTC",
+      "subtitle": "官方版本 4.2.2 · 2026-10-20 UTC",
       "localizedDescription": "版本公告来自 https://github.com/Lakr233/Asspp/releases/tag/4.2.2",
       "iconURL": "https://raw.githubusercontent.com/Lakr233/Asspp/main/Asspp/App/Assets.xcassets/AppIcon.appiconset/asspp.png",
       "version": "4.2.2",
       "versionDate": "2026-10-20T03:08:48Z",
       "downloadURL": "https://github.com/Lakr233/Asspp/releases/download/4.2.2/Asspp.ipa",
-      "size": 16458246
-    },
-    {
-      "name": "GestaltX (v1.0.4)",
-      "bundleIdentifier": "com.huami.gestultx",
-      "developerName": "huamidev",
-      "subtitle": "历史版本 v1.0.4 · 2026-11-10 UTC",
-      "localizedDescription": "版本公告来自 https://github.com/huamidev/GestaltX/releases/tag/v1.0.4",
-      "iconURL": "https://raw.githubusercontent.com/huamidev/GestaltX/main/GestaltX/Assets.xcassets/AppIcon.appiconset/AppIcon.png",
-      "version": "1.0.4",
-      "versionDate": "2026-11-10T07:27:47Z",
-      "downloadURL": "https://github.com/huamidev/GestaltX/releases/download/v1.0.4/GestaltX_1.0.4.ipa",
-      "size": 2865180
-    },
-    {
-      "name": "GestaltX (v1.0.3)",
-      "bundleIdentifier": "com.huami.gestultx",
-      "developerName": "huamidev",
-      "subtitle": "历史版本 v1.0.3 · 2026-11-09 UTC",
-      "localizedDescription": "版本公告来自 https://github.com/huamidev/GestaltX/releases/tag/v1.0.3",
-      "iconURL": "https://raw.githubusercontent.com/huamidev/GestaltX/main/GestaltX/Assets.xcassets/AppIcon.appiconset/AppIcon.png",
-      "version": "1.0.3",
-      "versionDate": "2026-11-09T16:23:40Z",
-      "downloadURL": "https://github.com/huamidev/GestaltX/releases/download/v1.0.3/GestaltX_1.0.3.ipa",
-      "size": 2744822
-    },
-    {
-      "name": "GestaltX (v1.0.2)",
-      "bundleIdentifier": "com.huami.gestultx",
-      "developerName": "huamidev",
-      "subtitle": "历史版本 v1.0.2 · 2026-11-09 UTC",
-      "localizedDescription": "版本公告来自 https://github.com/huamidev/GestaltX/releases/tag/v1.0.2",
-      "iconURL": "https://raw.githubusercontent.com/huamidev/GestaltX/main/GestaltX/Assets.xcassets/AppIcon.appiconset/AppIcon.png",
-      "version": "1.0.2",
-      "versionDate": "2026-11-09T10:06:31Z",
-      "downloadURL": "https://github.com/huamidev/GestaltX/releases/download/v1.0.2/GestaltX_1.0.2.ipa",
-      "size": 2489231
-    },
-    {
-      "name": "GestaltX (v1.0.1)",
-      "bundleIdentifier": "com.huami.gestultx",
-      "developerName": "huamidev",
-      "subtitle": "历史版本 v1.0.1 · 2026-11-09 UTC",
-      "localizedDescription": "版本公告来自 https://github.com/huamidev/GestaltX/releases/tag/v1.0.1",
-      "iconURL": "https://raw.githubusercontent.com/huamidev/GestaltX/main/GestaltX/Assets.xcassets/AppIcon.appiconset/AppIcon.png",
-      "version": "1.0.1",
-      "versionDate": "2026-11-09T05:28:40Z",
-      "downloadURL": "https://github.com/huamidev/GestaltX/releases/download/v1.0.1/GestaltX_1.0.1.ipa",
-      "size": 2459454
-    },
-    {
-      "name": "Erosion (0.3)",
-      "bundleIdentifier": "com.jbdotparty.Erosion",
-      "developerName": "jailbreakdotparty",
-      "subtitle": "历史版本 0.3 · 2026-11-09 UTC",
-      "localizedDescription": "版本公告来自 https://github.com/jailbreakdotparty/Erosion/releases/tag/0.3",
-      "iconURL": "https://raw.githubusercontent.com/jailbreakdotparty/Erosion/main/PreviewIcon.png",
-      "version": "0.3",
-      "versionDate": "2026-11-09T00:04:29Z",
-      "downloadURL": "https://github.com/jailbreakdotparty/Erosion/releases/download/0.3/Erosion_v0.3.ipa",
-      "size": 2484800
-    },
-    {
-      "name": "Erosion (0.2.1)",
-      "bundleIdentifier": "com.jbdotparty.Erosion",
-      "developerName": "jailbreakdotparty",
-      "subtitle": "历史版本 0.2.1 · 2026-09-18 UTC",
-      "localizedDescription": "版本公告来自 https://github.com/jailbreakdotparty/Erosion/releases/tag/0.2.1",
-      "iconURL": "https://raw.githubusercontent.com/jailbreakdotparty/Erosion/main/PreviewIcon.png",
-      "version": "0.2.1",
-      "versionDate": "2026-09-18T04:59:59Z",
-      "downloadURL": "https://github.com/jailbreakdotparty/Erosion/releases/download/0.2.1/Erosion_v0.2.1.ipa",
-      "size": 5414791
-    },
-    {
-      "name": "Erosion (0.2)",
-      "bundleIdentifier": "com.jbdotparty.Erosion",
-      "developerName": "jailbreakdotparty",
-      "subtitle": "历史版本 0.2 · 2026-09-15 UTC",
-      "localizedDescription": "版本公告来自 https://github.com/jailbreakdotparty/Erosion/releases/tag/0.2",
-      "iconURL": "https://raw.githubusercontent.com/jailbreakdotparty/Erosion/main/PreviewIcon.png",
-      "version": "0.2",
-      "versionDate": "2026-09-15T03:42:30Z",
-      "downloadURL": "https://github.com/jailbreakdotparty/Erosion/releases/download/0.2/Erosion_v0.2.ipa",
-      "size": 5409999
-    },
-    {
-      "name": "Erosion (0.1)",
-      "bundleIdentifier": "com.jbdotparty.Erosion",
-      "developerName": "jailbreakdotparty",
-      "subtitle": "历史版本 0.1 · 2026-08-25 UTC",
-      "localizedDescription": "版本公告来自 https://github.com/jailbreakdotparty/Erosion/releases/tag/0.1",
-      "iconURL": "https://raw.githubusercontent.com/jailbreakdotparty/Erosion/main/PreviewIcon.png",
-      "version": "0.1",
-      "versionDate": "2026-08-25T02:03:18Z",
-      "downloadURL": "https://github.com/jailbreakdotparty/Erosion/releases/download/0.1/Erosion_v0.1.ipa",
-      "size": 1025283
-    },
-    {
-      "name": "Erosion-CN (v0.8.0)",
-      "bundleIdentifier": "com.jbdotparty.Erosion.cn",
-      "developerName": "Kianuni",
-      "subtitle": "历史版本 v0.8.0 · 2026-11-11 UTC",
-      "localizedDescription": "版本公告来自 https://github.com/Kianuni/Erosion-CN/releases/tag/v0.8.0",
-      "iconURL": "https://raw.githubusercontent.com/Kianuni/Erosion-CN/main/PreviewIcon.png",
-      "version": "0.8.0",
-      "versionDate": "2026-11-11T03:36:17Z",
-      "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v0.8.0/Erosion_v0.8.0_zh-Hans.ipa",
-      "size": 6021405
-    },
-    {
-      "name": "Erosion-CN (v0.7.2)",
-      "bundleIdentifier": "com.jbdotparty.Erosion.cn",
-      "developerName": "Kianuni",
-      "subtitle": "历史版本 v0.7.2 · 2026-11-10 UTC",
-      "localizedDescription": "版本公告来自 https://github.com/Kianuni/Erosion-CN/releases/tag/v0.7.2",
-      "iconURL": "https://raw.githubusercontent.com/Kianuni/Erosion-CN/main/PreviewIcon.png",
-      "version": "0.7.2",
-      "versionDate": "2026-11-10T14:20:03Z",
-      "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v0.7.2/Erosion_v0.7.2_zh-Hans.ipa",
-      "size": 5769202
-    },
-    {
-      "name": "Erosion-CN (v0.7.1)",
-      "bundleIdentifier": "com.jbdotparty.Erosion.cn",
-      "developerName": "Kianuni",
-      "subtitle": "历史版本 v0.7.1 · 2026-11-10 UTC",
-      "localizedDescription": "版本公告来自 https://github.com/Kianuni/Erosion-CN/releases/tag/v0.7.1",
-      "iconURL": "https://raw.githubusercontent.com/Kianuni/Erosion-CN/main/PreviewIcon.png",
-      "version": "0.7.1",
-      "versionDate": "2026-11-10T12:42:17Z",
-      "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v0.7.1/Erosion_v0.7.1_zh-Hans.ipa",
-      "size": 5733412
-    },
-    {
-      "name": "Erosion-CN (v0.7.0)",
-      "bundleIdentifier": "com.jbdotparty.Erosion.cn",
-      "developerName": "Kianuni",
-      "subtitle": "历史版本 v0.7.0 · 2026-11-10 UTC",
-      "localizedDescription": "版本公告来自 https://github.com/Kianuni/Erosion-CN/releases/tag/v0.7.0",
-      "iconURL": "https://raw.githubusercontent.com/Kianuni/Erosion-CN/main/PreviewIcon.png",
-      "version": "0.7.0",
-      "versionDate": "2026-11-10T11:48:48Z",
-      "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v0.7.0/Erosion_v0.7.0_zh-Hans.ipa",
-      "size": 5782794
-    },
-    {
-      "name": "Asspp (4.2.1)",
-      "bundleIdentifier": "wiki.qaq.Asspp",
-      "developerName": "Lakr233",
-      "subtitle": "历史版本 4.2.1 · 2026-06-14 UTC",
-      "localizedDescription": "版本公告来自 https://github.com/Lakr233/Asspp/releases/tag/4.2.1",
-      "iconURL": "https://raw.githubusercontent.com/Lakr233/Asspp/main/Asspp/App/Assets.xcassets/AppIcon.appiconset/asspp.png",
-      "version": "4.2.1",
-      "versionDate": "2026-06-14T02:47:42Z",
-      "downloadURL": "https://github.com/Lakr233/Asspp/releases/download/4.2.1/Asspp.ipa",
-      "size": 15162563
-    },
-    {
-      "name": "Asspp (4.2.0)",
-      "bundleIdentifier": "wiki.qaq.Asspp",
-      "developerName": "Lakr233",
-      "subtitle": "历史版本 4.2.0 · 2026-06-12 UTC",
-      "localizedDescription": "版本公告来自 https://github.com/Lakr233/Asspp/releases/tag/4.2.0",
-      "iconURL": "https://raw.githubusercontent.com/Lakr233/Asspp/main/Asspp/App/Assets.xcassets/AppIcon.appiconset/asspp.png",
-      "version": "4.2.0",
-      "versionDate": "2026-06-12T08:23:55Z",
-      "downloadURL": "https://github.com/Lakr233/Asspp/releases/download/4.2.0/Asspp.ipa",
-      "size": 15153128
-    },
-    {
-      "name": "Asspp (4.1.1)",
-      "bundleIdentifier": "wiki.qaq.Asspp",
-      "developerName": "Lakr233",
-      "subtitle": "历史版本 4.1.1 · 2026-02-20 UTC",
-      "localizedDescription": "版本公告来自 https://github.com/Lakr233/Asspp/releases/tag/4.1.1",
-      "iconURL": "https://raw.githubusercontent.com/Lakr233/Asspp/main/Asspp/App/Assets.xcassets/AppIcon.appiconset/asspp.png",
-      "version": "4.1.1",
-      "versionDate": "2026-02-20T17:26:46Z",
-      "downloadURL": "https://github.com/Lakr233/Asspp/releases/download/4.1.1/Asspp.ipa",
-      "size": 13586686
-    },
-    {
-      "name": "Asspp (3.0.25)",
-      "bundleIdentifier": "wiki.qaq.Asspp",
-      "developerName": "Lakr233",
-      "subtitle": "历史版本 3.0.25 · 2025-10-16 UTC",
-      "localizedDescription": "版本公告来自 https://github.com/Lakr233/Asspp/releases/tag/3.0.25",
-      "iconURL": "https://raw.githubusercontent.com/Lakr233/Asspp/main/Asspp/App/Assets.xcassets/AppIcon.appiconset/asspp.png",
-      "version": "3.0.25",
-      "versionDate": "2025-10-16T21:15:10Z",
-      "downloadURL": "https://github.com/Lakr233/Asspp/releases/download/3.0.25/Asspp.ipa",
-      "size": 10917639
+      "size": 16458246,
+      "versions": [
+        {
+          "version": "4.2.2",
+          "date": "2026-10-20T03:08:48Z",
+          "localizedDescription": "版本公告来自 https://github.com/Lakr233/Asspp/releases/tag/4.2.2",
+          "downloadURL": "https://github.com/Lakr233/Asspp/releases/download/4.2.2/Asspp.ipa",
+          "size": 16458246
+        },
+        {
+          "version": "4.2.1",
+          "date": "2026-06-14T02:47:42Z",
+          "localizedDescription": "版本公告来自 https://github.com/Lakr233/Asspp/releases/tag/4.2.1",
+          "downloadURL": "https://github.com/Lakr233/Asspp/releases/download/4.2.1/Asspp.ipa",
+          "size": 15162563
+        },
+        {
+          "version": "4.2.0",
+          "date": "2026-06-12T08:23:55Z",
+          "localizedDescription": "版本公告来自 https://github.com/Lakr233/Asspp/releases/tag/4.2.0",
+          "downloadURL": "https://github.com/Lakr233/Asspp/releases/download/4.2.0/Asspp.ipa",
+          "size": 15153128
+        },
+        {
+          "version": "4.1.1",
+          "date": "2026-02-20T17:26:46Z",
+          "localizedDescription": "版本公告来自 https://github.com/Lakr233/Asspp/releases/tag/4.1.1",
+          "downloadURL": "https://github.com/Lakr233/Asspp/releases/download/4.1.1/Asspp.ipa",
+          "size": 13586686
+        },
+        {
+          "version": "3.0.25",
+          "date": "2025-10-16T21:15:10Z",
+          "localizedDescription": "版本公告来自 https://github.com/Lakr233/Asspp/releases/tag/3.0.25",
+          "downloadURL": "https://github.com/Lakr233/Asspp/releases/download/3.0.25/Asspp.ipa",
+          "size": 10917639
+        }
+      ]
     }
   ]
 }
