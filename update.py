@@ -119,10 +119,8 @@ def main():
         # 可选：若有多个 IPA，想选与仓库名不同的附件，可添加 downloadURL 并填写该附件的官方最新版地址。
         # 如果只想显示版本，可添加 "downloadURL": "XXXX"。
     ]
-    names = [app["name"] for app in apps]
-    title = "、".join(names[:-1]) + " 与 " + names[-1] if len(names) > 1 else "".join(names)
     source = {
-        "name": f"{title} 更新".strip(),
+        "name": "、".join(app["name"] for app in apps),
         "identifier": "personal.gestaltx.erosion.releases",
         "subtitle": "官方正式版公告",
         "description": "在每个应用的副标题查看官方最新版本及发布日期。",
