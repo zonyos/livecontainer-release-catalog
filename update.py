@@ -72,8 +72,8 @@ def catalogue_entry(project):
         "downloadURL": "XXXX",
     }
     configured_url = project.get("downloadURL")
-    if project["repository"] not in VERSION_ONLY_REPOSITORIES and configured_url != "XXXX":
-        preferred_filename = name + ".ipa"
+#    if project["repository"] not in VERSION_ONLY_REPOSITORIES and configured_url != "XXXX":
+#        preferred_filename = name + ".ipa"
         if configured_url:
             latest_prefix = f"https://github.com/{project['repository']}/releases/latest/download/"
             if not configured_url.startswith(latest_prefix):
