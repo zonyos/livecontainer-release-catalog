@@ -9,7 +9,7 @@ from urllib.parse import unquote, urlsplit
 
 
 # 这两个项目沿用现有的版本公告模式。
-VERSION_ONLY_REPOSITORIES = {"huamidev/GestaltX", "jailbreakdotparty/Erosion"}
+# VERSION_ONLY_REPOSITORIES = {"huamidev/GestaltX", "jailbreakdotparty/Erosion"}
 
 
 def latest_release(repository):
@@ -93,13 +93,13 @@ def main():
         catalogue_entry({
             "repository": "huamidev/GestaltX",
             "bundleIdentifier": "com.huami.gestultx",
-            "downloadURL": "XXXX",
+#            "downloadURL": "XXXX",
         }),
         # 官方发布页 https://github.com/jailbreakdotparty/Erosion/releases/latest
         catalogue_entry({
             "repository": "jailbreakdotparty/Erosion",
             "bundleIdentifier": "com.jbdotparty.Erosion",
-            "downloadURL": "XXXX",
+ #           "downloadURL": "XXXX",
         }),
         # 官方发布页 https://github.com/Lakr233/Asspp/releases/latest
         catalogue_entry({
