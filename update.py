@@ -62,16 +62,19 @@ def asspp_download_entry(entry, release, previous_apps):
 # XXXX 表示只发布版本信息；Asspp 的下载配置在生成目录时读取官方附件。
 PROJECTS = (
     {
+        # 官方发布页 https://github.com/huamidev/GestaltX/releases/latest
         "repository": "huamidev/GestaltX",
         "bundleIdentifier": "com.huami.gestultx",
         "downloadURL": "XXXX",
     },
     {
+        # 官方发布页 https://github.com/jailbreakdotparty/Erosion/releases/latest
         "repository": "jailbreakdotparty/Erosion",
         "bundleIdentifier": "com.jbdotparty.Erosion",
         "downloadURL": "XXXX",
     },
     {
+        # 官方发布页 https://github.com/Lakr233/Asspp/releases/latest
         "repository": "Lakr233/Asspp",
         "bundleIdentifier": "wiki.qaq.Asspp",
         "downloadURL": asspp_download_entry,
