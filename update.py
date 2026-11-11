@@ -107,6 +107,15 @@ def main():
             "bundleIdentifier": "wiki.qaq.Asspp",
             "downloadURL": "https://github.com/Lakr233/Asspp/releases/latest/download/Asspp.ipa",
         }),
+        # 新增 App 模板：复制下面五行到列表的右方括号之前，保留缩进，去掉每行开头的「# 」。
+        # repository 填 GitHub 的「作者/仓库名」，bundleIdentifier 填 App 本身的标识符。
+        # 要自动查找 IPA，可删除 downloadURL 这一行，版本号和实际文件名会从最新正式发布读取。
+        # 要指定首选附件，保留该行并替换为官方最新版附件地址。只显示版本时填 "XXXX"。
+        # catalogue_entry({
+        #     "repository": "OWNER/ExampleReader",
+        #     "bundleIdentifier": "com.example.reader",
+        #     "downloadURL": "https://github.com/OWNER/ExampleReader/releases/latest/download/ExampleReader.ipa",
+        # }),
     ]
     names = [app["name"] for app in apps]
     title = "、".join(names[:-1]) + " 与 " + names[-1] if len(names) > 1 else "".join(names)
