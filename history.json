@@ -7,6 +7,18 @@
   "tintColor": "#8E8E93",
   "apps": [
     {
+      "name": "GestaltX (v1.0.5)",
+      "bundleIdentifier": "com.huami.gestultx",
+      "developerName": "huamidev",
+      "subtitle": "历史版本 v1.0.5 · 2026-11-11 UTC",
+      "localizedDescription": "版本公告来自 https://github.com/huamidev/GestaltX/releases/tag/v1.0.5",
+      "iconURL": "https://raw.githubusercontent.com/huamidev/GestaltX/main/GestaltX/Assets.xcassets/AppIcon.appiconset/AppIcon.png",
+      "version": "1.0.5",
+      "versionDate": "2026-11-11T03:45:16Z",
+      "downloadURL": "https://github.com/huamidev/GestaltX/releases/download/v1.0.5/GestaltX_1.0.5.ipa",
+      "size": 2942882
+    },
+    {
       "name": "GestaltX (v1.0.4)",
       "bundleIdentifier": "com.huami.gestultx",
       "developerName": "huamidev",
@@ -29,30 +41,6 @@
       "versionDate": "2026-11-09T16:23:40Z",
       "downloadURL": "https://github.com/huamidev/GestaltX/releases/download/v1.0.3/GestaltX_1.0.3.ipa",
       "size": 2744822
-    },
-    {
-      "name": "GestaltX (v1.0.2)",
-      "bundleIdentifier": "com.huami.gestultx",
-      "developerName": "huamidev",
-      "subtitle": "历史版本 v1.0.2 · 2026-11-09 UTC",
-      "localizedDescription": "版本公告来自 https://github.com/huamidev/GestaltX/releases/tag/v1.0.2",
-      "iconURL": "https://raw.githubusercontent.com/huamidev/GestaltX/main/GestaltX/Assets.xcassets/AppIcon.appiconset/AppIcon.png",
-      "version": "1.0.2",
-      "versionDate": "2026-11-09T10:06:31Z",
-      "downloadURL": "https://github.com/huamidev/GestaltX/releases/download/v1.0.2/GestaltX_1.0.2.ipa",
-      "size": 2489231
-    },
-    {
-      "name": "GestaltX (v1.0.1)",
-      "bundleIdentifier": "com.huami.gestultx",
-      "developerName": "huamidev",
-      "subtitle": "历史版本 v1.0.1 · 2026-11-09 UTC",
-      "localizedDescription": "版本公告来自 https://github.com/huamidev/GestaltX/releases/tag/v1.0.1",
-      "iconURL": "https://raw.githubusercontent.com/huamidev/GestaltX/main/GestaltX/Assets.xcassets/AppIcon.appiconset/AppIcon.png",
-      "version": "1.0.1",
-      "versionDate": "2026-11-09T05:28:40Z",
-      "downloadURL": "https://github.com/huamidev/GestaltX/releases/download/v1.0.1/GestaltX_1.0.1.ipa",
-      "size": 2459454
     },
     {
       "name": "Erosion (0.3)",
@@ -103,6 +91,18 @@
       "size": 1025283
     },
     {
+      "name": "Erosion-CN (v0.9.0)",
+      "bundleIdentifier": "com.jbdotparty.Erosion",
+      "developerName": "Kianuni",
+      "subtitle": "历史版本 v0.9.0 · 2026-11-12 UTC",
+      "localizedDescription": "版本公告来自 https://github.com/Kianuni/Erosion-CN/releases/tag/v0.9.0",
+      "iconURL": "https://raw.githubusercontent.com/Kianuni/Erosion-CN/main/PreviewIcon.png",
+      "version": "0.9.0",
+      "versionDate": "2026-11-12T10:54:42Z",
+      "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v0.9.0/Erosion_v0.9.0_Bilingual.ipa",
+      "size": 7525162
+    },
+    {
       "name": "Erosion-CN (v0.8.6)",
       "bundleIdentifier": "com.jbdotparty.Erosion",
       "developerName": "Kianuni",
@@ -137,18 +137,6 @@
       "versionDate": "2026-11-11T10:44:15Z",
       "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v0.8.2/Erosion_v0.8.2_zh-Hans.ipa",
       "size": 6036683
-    },
-    {
-      "name": "Erosion-CN (v0.8.1)",
-      "bundleIdentifier": "com.jbdotparty.Erosion",
-      "developerName": "Kianuni",
-      "subtitle": "历史版本 v0.8.1 · 2026-11-11 UTC",
-      "localizedDescription": "版本公告来自 https://github.com/Kianuni/Erosion-CN/releases/tag/v0.8.1",
-      "iconURL": "https://raw.githubusercontent.com/Kianuni/Erosion-CN/main/PreviewIcon.png",
-      "version": "0.8.1",
-      "versionDate": "2026-11-11T06:46:21Z",
-      "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v0.8.1/Erosion_v0.8.1_zh-Hans.ipa",
-      "size": 6029106
     },
     {
       "name": "Asspp (4.2.1)",
