@@ -7,6 +7,18 @@
   "tintColor": "#8E8E93",
   "apps": [
     {
+      "name": "GestaltX (v1.0.7)",
+      "bundleIdentifier": "com.huami.gestultx",
+      "developerName": "huamidev",
+      "subtitle": "历史版本 v1.0.7 · 2026-11-12 UTC",
+      "localizedDescription": "版本公告来自 https://github.com/huamidev/GestaltX/releases/tag/v1.0.7",
+      "iconURL": "https://raw.githubusercontent.com/huamidev/GestaltX/main/GestaltX/Assets.xcassets/AppIcon.appiconset/AppIcon.png",
+      "version": "1.0.7",
+      "versionDate": "2026-11-12T17:14:29Z",
+      "downloadURL": "https://github.com/huamidev/GestaltX/releases/download/v1.0.7/GestaltX_1.0.7.ipa",
+      "size": 3563948
+    },
+    {
       "name": "GestaltX (v1.0.5)",
       "bundleIdentifier": "com.huami.gestultx",
       "developerName": "huamidev",
@@ -29,18 +41,6 @@
       "versionDate": "2026-11-10T07:27:47Z",
       "downloadURL": "https://github.com/huamidev/GestaltX/releases/download/v1.0.4/GestaltX_1.0.4.ipa",
       "size": 2865180
-    },
-    {
-      "name": "GestaltX (v1.0.3)",
-      "bundleIdentifier": "com.huami.gestultx",
-      "developerName": "huamidev",
-      "subtitle": "历史版本 v1.0.3 · 2026-11-09 UTC",
-      "localizedDescription": "版本公告来自 https://github.com/huamidev/GestaltX/releases/tag/v1.0.3",
-      "iconURL": "https://raw.githubusercontent.com/huamidev/GestaltX/main/GestaltX/Assets.xcassets/AppIcon.appiconset/AppIcon.png",
-      "version": "1.0.3",
-      "versionDate": "2026-11-09T16:23:40Z",
-      "downloadURL": "https://github.com/huamidev/GestaltX/releases/download/v1.0.3/GestaltX_1.0.3.ipa",
-      "size": 2744822
     },
     {
       "name": "Erosion (0.3)",
