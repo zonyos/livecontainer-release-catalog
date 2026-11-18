@@ -91,6 +91,18 @@
       "size": 1025283
     },
     {
+      "name": "Erosion-CN (v1.0.4)",
+      "bundleIdentifier": "com.jbdotparty.Erosion",
+      "developerName": "Kianuni",
+      "subtitle": "历史版本 v1.0.4 · 2026-11-17 UTC",
+      "localizedDescription": "版本公告来自 https://github.com/Kianuni/Erosion-CN/releases/tag/v1.0.4",
+      "iconURL": "https://raw.githubusercontent.com/Kianuni/Erosion-CN/main/PreviewIcon.png",
+      "version": "1.0.4",
+      "versionDate": "2026-11-17T14:37:22Z",
+      "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v1.0.4/Erosion_v1.0.4_Bilingual.ipa",
+      "size": 6857330
+    },
+    {
       "name": "Erosion-CN (v1.0.3)",
       "bundleIdentifier": "com.jbdotparty.Erosion",
       "developerName": "Kianuni",
@@ -125,18 +137,6 @@
       "versionDate": "2026-11-17T05:26:32Z",
       "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v1.0.1/Erosion_v1.0.1_Bilingual.ipa",
       "size": 6696463
-    },
-    {
-      "name": "Erosion-CN (v1.0.0)",
-      "bundleIdentifier": "com.jbdotparty.Erosion",
-      "developerName": "Kianuni",
-      "subtitle": "历史版本 v1.0.0 · 2026-11-17 UTC",
-      "localizedDescription": "版本公告来自 https://github.com/Kianuni/Erosion-CN/releases/tag/v1.0.0",
-      "iconURL": "https://raw.githubusercontent.com/Kianuni/Erosion-CN/main/PreviewIcon.png",
-      "version": "1.0.0",
-      "versionDate": "2026-11-17T03:49:19Z",
-      "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v1.0.0/Erosion_v1.0.0_Bilingual.ipa",
-      "size": 6671386
     },
     {
       "name": "Asspp (4.2.1)",
