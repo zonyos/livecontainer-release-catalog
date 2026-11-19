@@ -100,14 +100,21 @@
       "name": "Erosion-CN",
       "bundleIdentifier": "com.jbdotparty.Erosion",
       "developerName": "Kianuni",
-      "subtitle": "官方版本 v1.0.5 · 2026-11-17 UTC",
-      "localizedDescription": "版本公告来自 https://github.com/Kianuni/Erosion-CN/releases/tag/v1.0.5",
+      "subtitle": "官方版本 v1.0.6 · 2026-11-19 UTC",
+      "localizedDescription": "版本公告来自 https://github.com/Kianuni/Erosion-CN/releases/tag/v1.0.6",
       "iconURL": "https://raw.githubusercontent.com/Kianuni/Erosion-CN/main/PreviewIcon.png",
-      "version": "1.0.5",
-      "versionDate": "2026-11-17T23:33:43Z",
-      "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v1.0.5/Erosion_v1.0.5_Bilingual.ipa",
-      "size": 6875541,
+      "version": "1.0.6",
+      "versionDate": "2026-11-19T13:48:12Z",
+      "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v1.0.6/Erosion_v1.0.6_Bilingual.ipa",
+      "size": 6948787,
       "versions": [
+        {
+          "version": "1.0.6",
+          "date": "2026-11-19T13:48:12Z",
+          "localizedDescription": "版本公告来自 https://github.com/Kianuni/Erosion-CN/releases/tag/v1.0.6",
+          "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v1.0.6/Erosion_v1.0.6_Bilingual.ipa",
+          "size": 6948787
+        },
         {
           "version": "1.0.5",
           "date": "2026-11-17T23:33:43Z",
@@ -135,13 +142,6 @@
           "localizedDescription": "版本公告来自 https://github.com/Kianuni/Erosion-CN/releases/tag/v1.0.2",
           "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v1.0.2/Erosion_v1.0.2_Bilingual.ipa",
           "size": 6791366
-        },
-        {
-          "version": "1.0.1",
-          "date": "2026-11-17T05:26:32Z",
-          "localizedDescription": "版本公告来自 https://github.com/Kianuni/Erosion-CN/releases/tag/v1.0.1",
-          "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v1.0.1/Erosion_v1.0.1_Bilingual.ipa",
-          "size": 6696463
         }
       ]
     },
