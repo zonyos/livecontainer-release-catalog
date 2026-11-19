@@ -16,11 +16,13 @@ SOURCE_ICON_URL = (
 
 
 def published_releases(repository, limit=MAX_RELEASES):
+    token = os.environ.get("GH_TOKEN")
     response = subprocess.check_output([
         "curl", "--fail", "--silent", "--show-error", "--location",
         "--max-time", "30", "--retry", "2",
+        *(["--header", "@-"] if token else []),
         f"https://api.github.com/repos/{repository}/releases?per_page={limit}",
-    ])
+    ], input=f"Authorization: Bearer {token}\n".encode() if token else None)
     releases = [
         release for release in json.loads(response)
         if release.get("tag_name") and not release.get("draft") and not release.get("prerelease")
