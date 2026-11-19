@@ -123,11 +123,11 @@ def write_json(path, payload):
 
 def main():
     projects = [
-        # 官方发布页 https://github.com/huamidev/GestaltX/releases/latest
+        # 官方发布页 https://github.com/huami1314/GestaltX/releases/latest
         {
-            "repository": "huamidev/GestaltX",
+            "repository": "huami1314/GestaltX",
             "bundleIdentifier": "com.huami.gestultx",
-            "iconURL": "https://raw.githubusercontent.com/huamidev/GestaltX/main/GestaltX/Assets.xcassets/AppIcon.appiconset/AppIcon.png",
+            "iconURL": "https://raw.githubusercontent.com/huami1314/GestaltX/main/GestaltX/Assets.xcassets/AppIcon.appiconset/AppIcon.png",
         },
         # 官方发布页 https://github.com/jailbreakdotparty/Erosion/releases/latest
         {
